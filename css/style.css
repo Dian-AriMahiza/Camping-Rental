@@ -1,0 +1,226 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Menggunakan font modern */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #d4c5e8, #e0d0c9, #c5e0e8, #e8e0e0); /* Gradasi lembut dan estetik */
+    background-size: 400% 400%; /* Membuat efek pergerakan gradasi lebih halus */
+    animation: gradientAnimation 12s ease infinite; /* Durasi animasi 12 detik */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Warna teks gelap untuk kontras yang baik */
+}
+
+/* Animasi pergerakan gradasi */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px; /* Tambah padding untuk ruang yang lebih baik */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 450px; /* Lebar lebih lebar untuk kenyamanan */
+    text-align: center; /* Pusatkan teks di dalam kontainer */
+}
+
+h1 {
+    font-size: 50px; /* Ukuran font yang lebih besar */
+    margin-bottom: 10px; /* Ruang di bawah judul */
+    color: #001429; /* Warna gelap untuk judul */
+    text-align: center; /* Pusatkan judul */
+}
+
+.welcome-text {
+    font-size: 20px; /* Ukuran font sambutan */
+    color: #333; /* Warna teks gelap untuk kontras yang lebih baik */
+    margin-bottom: 20px; /* Ruang di bawah sambutan */
+    font-weight: bold; /* Mempertegas font */
+}
+
+.welcome-text2 {
+    font-size: 25px; /* Ukuran font sambutan */
+    color: #333; /* Warna teks gelap untuk kontras yang lebih baik */
+    margin-bottom: 20px; /* Ruang di bawah sambutan */
+    font-weight: bold; /* Mempertegas font */
+}
+
+.form-group {
+    margin: 15px 0; /* Tambah jarak antar grup */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px; /* Padding lebih banyak untuk input */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s; /* Transisi saat fokus */
+}
+
+.form-group input:focus {
+    border-color: #4CAF50; /* Warna border saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
+/* Wrapper untuk tombol login dan guest mode */
+.button-group {
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: space-between; /* Memberikan jarak antar tombol */
+    margin-top: 20px; /* Menambahkan jarak atas untuk estetika */
+    margin-bottom: 30px;
+}
+
+/* Style tambahan untuk tombol login */
+button#login-button {
+    flex: 1; /* Ukuran fleksibel */
+    margin-right: 10px; /* Jarak antara tombol login dan guest mode */
+}
+
+/* Style tambahan untuk tombol guest mode */
+button.guest-mode-btn {
+    flex: 1; /* Ukuran fleksibel */
+    margin-left: 10px; /* Jarak antara tombol guest mode dan login */
+}
+
+/* Tombol Log In */
+button {
+    padding: 12px;
+    background-color: #4CAF50; /* Hijau untuk Log In */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Ukuran font yang lebih besar */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Hijau lebih gelap saat hover */
+}
+
+/* Tombol Guest Mode */
+.guest-mode-btn {
+    padding: 12px;
+    background-color: #ffffff; /* Warna putih */
+    color: #4CAF50; /* Warna hijau untuk teks */
+    border: 2px solid #4CAF50; /* Border hijau */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Ukuran font yang lebih besar */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.guest-mode-btn:hover {
+    background-color: #e7e6e6; /* Warna hijau saat hover */
+    color: #367c38; /* Warna teks putih saat hover */
+    border-color: #419644; /* Border tetap hijau */
+}
+
+p {
+    text-align: center;
+    margin-top: 15px; /* Tambah jarak di atas paragraf */
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Notifikasi CSS */
+#notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    border: 1px solid #4CAF50;
+    text-align: center; /* Tambahin ini buat teks di tengah */
+}
+
+/* Memusatkan elemen CAPTCHA */
+.g-recaptcha {
+    margin-top: 20px; /* Menambahkan jarak antara CAPTCHA dan elemen sebelumnya */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Pusatkan CAPTCHA secara horizontal */
+    align-items: center;     /* Pusatkan CAPTCHA secara vertikal jika diperlukan */
+    width: 100%;
+}
+
+/* Posisi "Continue as Guest" di sebelah "Sign In" */
+.guest-login {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.guest-login a {
+    color: #4CAF50;
+    font-size: 14px;
+}
+
+.guest-login a:hover {
+    text-decoration: underline;
+}
+
+/* Menata ikon mata */
+/* Styling untuk ikon mata */
+.eye-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888; /* Warna default */
+}
+
+.eye-icon:hover {
+    color: #333; /* Warna saat hover */
+}
+
+.password-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.eye-icon1 {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 20; /* Increase z-index to ensure it's on top */
+}
+
+/* Styling untuk garis pemisah */
+.separator {
+    border: none;
+    border-top: 1px solid #ddd; /* Warna garis */
+    margin: 20px 0; /* Memberikan jarak sebelum dan sesudah garis */
+}

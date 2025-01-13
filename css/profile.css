@@ -1,0 +1,116 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgba(183, 221, 242, 0.3);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.card {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Profile Password Input Container */
+.password-container {
+    position: relative; /* Membuat parent relatif untuk menempatkan ikon mata */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+.eye-icon:hover {
+    color: #333;
+}
+
+.password-requirements {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Styling untuk notifikasi */
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    text-align: center; /* Pastikan teks rata tengah */
+    display: flex; /* Gunakan flexbox untuk tata letak yang lebih baik */
+    justify-content: center; /* Rata tengah secara horizontal */
+    align-items: center; /* Rata tengah secara vertikal */
+    width: 90%; /* Membuat lebar notifikasi 90% dari lebar layar */
+    max-width: 600px; /* Batas lebar maksimal agar tidak terlalu besar */
+}
+
+/* Untuk notifikasi error (misal: warna merah untuk error) */
+.notification.error {
+    background-color: #f44336; /* Warna merah untuk error */
+}
+
+p {
+    margin: 5px 0; /* Mengatur margin pada paragraf */
+    font-size: 17px;
+}
+
+strong {
+    display: inline-block; /* Agar elemen strong seperti 'Username :' atau 'Email :' bisa disusun secara horizontal */
+    width: 100px; /* Lebar yang cukup untuk menampung teks 'Username :' atau 'Email :' */
+}
+
+span {
+    display: inline-block;
+    vertical-align: top; /* Agar span berada di atas garis yang sama dengan strong */
+}
+
+#edit-btn {
+    margin-top: 20px; /* Atur sesuai keinginan, misalnya 20px */
+}

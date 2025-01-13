@@ -1,0 +1,94 @@
+/* dashboard.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgba(183, 221, 242, 0.3);
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+
+h2, h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+#notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    text-align: center; /* Teks di dalam notifikasi rata tengah */
+}
+
+/* Responsif untuk tampilan layar lebih kecil */
+@media (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    /* Menyesuaikan ukuran notifikasi di layar lebih kecil */
+    #notification {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Tampilan responsif tambahan untuk perangkat yang lebih kecil */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px; /* Ukuran font judul lebih kecil untuk layar kecil */
+    }
+
+    .card-img-top {
+        height: 150px; /* Menyesuaikan ukuran gambar */
+    }
+
+    .container {
+        padding: 10px; /* Lebih kecil padding untuk perangkat kecil */
+    }
+
+    #notification {
+        width: 90%; /* Lebar notifikasi lebih besar untuk perangkat kecil */
+    }
+}

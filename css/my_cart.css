@@ -1,0 +1,60 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgba(183, 221, 242, 0.3);
+}
+
+#notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    text-align: center; /* Teks di dalam notifikasi rata tengah */
+}
+
+.navbar {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.container {
+    max-width: 1200px; /* Menyesuaikan dengan lebar kontainer di halaman lain */
+    width: 100%;
+    padding: 0 20px; /* Menambahkan padding di dalam container */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    #map {
+        height: 40vh; /* Lebih kecil untuk tampilan mobile */
+        width: 100%; /* Menyesuaikan lebar dengan layar */
+    }
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    width: 100%; /* Lebar fleksibel sesuai lebar layar */
+    max-width: 700px; /* Tetap ada batas maksimalnya */
+    height: 50vh; /* Ketinggian sesuai dengan 50% tinggi layar */
+    margin: 20px auto; /* Margin atas dan tengah */
+    display: block; /* Agar margin auto jalan */
+    border: 2px solid #cccccc00; /* Optional untuk border */
+    border-radius: 10px; /* Agar lebih smooth */
+}
