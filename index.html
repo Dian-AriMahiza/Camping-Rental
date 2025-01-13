@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>MyCamp! - Sign In</title>
+</head>
+<body>
+
+    <!-- Notifikasi -->
+    <div id="notification" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000; border: 1px solid #4CAF50; text-align: center;">
+    <span id="notification-message"></span>
+    </div>
+
+    <div class="container">
+        <h1>MyCamp!</h1> <!-- Judul besar -->
+        <p class="welcome-text">Sewa perlengkapan, nikmati petualangan!</p> <!-- Teks sambutan di dalam kotak -->
+        <form id="loginForm" method="POST">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group password-group" style="position: relative;">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <span class="eye-icon" onclick="togglePassword('password')">
+                    <i id="toggleIcon" class="fas fa-eye-slash"></i>
+                </span>
+            </div>
+
+            <!-- Forgot password link -->
+            <div class="forgot-password">
+                <a href="forgot_password.html" style="display: block; margin-top: 10px; text-align: right;">Lupa Password?</a>
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6LdccpEqAAAAACRYFEJwpkmCKXexYbTOXp2AkI66" style="margin-top: 20px;"></div>
+            
+            <div class="button-group">
+                <button id="login-button" type="submit">Log In</button>
+                <button class="guest-mode-btn" onclick="location.href='guest_dashboard.html'">Mode Tamu</button>
+            </div>
+
+            <p>Belum punya akun? <a href="signup.html">Sign Up</a></p> <!-- Tautan ke Sign Up -->
+            <hr class="separator">
+            <p class="copyright">2024 &copy; Dibuat secara <i class="fas fa-bolt" style="color: #f39c12;"></i> oleh <a href="https://www.linkedin.com/in/dian-ari-mahiza-d0a1m" target="_blank" style="color: #f2351f; text-decoration: none; font-weight: bold;">DAM</a></p>
+        </form>
+    </div>
+
+    <!-- Tambahkan file JS yang telah dipisahkan -->
+    <script src="js/index.js"></script>
+</body>
+</html>

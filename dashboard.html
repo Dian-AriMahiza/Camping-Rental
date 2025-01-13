@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCamp! - Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Tambahkan Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MyCamp!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="dashboard.html">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mycart.html">Keranjang <span id="cart-badge" class="badge badge-pill badge-primary">0</span></a>
+                </li>                  
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profil Akun</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-danger" id="logoutBtn">Log Out</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="notification" class="alert alert-success" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000;">
+        <span id="notification-message"></span>
+    </div>    
+
+    <div class="container mt-4">
+        <h1>Peralatan Berkemah yang Tersedia</h1>
+        <div class="row" id="equipment-list">
+            <!-- Gunakan Font Awesome untuk ikon tombol "Add to Cart" -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/tent.png" class="card-img-top" alt="Tent">
+                    <div class="card-body">
+                        <h5 class="card-title">Tenda</h5>
+                        <p class="card-text">Sempurna untuk berkemah di luar ruangan.</p>
+                        <button class="btn btn-success" onclick="addToCart('Tenda')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/sleeping_bag.png" class="card-img-top" alt="Sleeping Bag">
+                    <div class="card-body">
+                        <h5 class="card-title">Kantong Tidur</h5>
+                        <p class="card-text">Hangat dan nyaman untuk tidur nyenyak.</p>
+                        <button class="btn btn-success" onclick="addToCart('Kantong Tidur')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/backpack.png" class="card-img-top" alt="Backpack">
+                    <div class="card-body">
+                        <h5 class="card-title">Ransel Kemah</h5>
+                        <p class="card-text">Tahan lama dan luas untuk semua perlengkapan Anda.</p>
+                        <button class="btn btn-success" onclick="addToCart('Ransel Kemah')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/cookware.png" class="card-img-top" alt="Cookware">
+                    <div class="card-body">
+                        <h5 class="card-title">Peralatan Masak</h5>
+                        <p class="card-text">Peralatan masak penting untuk makanan berkemah Anda.</p>
+                        <button class="btn btn-success" onclick="addToCart('Peralatan Masak')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/flashlight.png" class="card-img-top" alt="Flashlight">
+                    <div class="card-body">
+                        <h5 class="card-title">Senter</h5>
+                        <p class="card-text">Senter yang terang dan portabel.</p>
+                        <button class="btn btn-success" onclick="addToCart('Senter')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/stove.png" class="card-img-top" alt="Stove">
+                    <div class="card-body">
+                        <h5 class="card-title">Kompor Kemah</h5>
+                        <p class="card-text">Kompor ringkas untuk memasak di mana saja.</p>
+                        <button class="btn btn-success" onclick="addToCart('Kompor Kemah')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/chairs.png" class="card-img-top" alt="Camping Chairs">
+                    <div class="card-body">
+                        <h5 class="card-title">Kursi Kemah</h5>
+                        <p class="card-text">Kursi yang nyaman untuk perjalanan berkemah Anda.</p>
+                        <button class="btn btn-success" onclick="addToCart('Kursi Kemah')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/first_aid_kit.png" class="card-img-top" alt="First Aid Kit">
+                    <div class="card-body">
+                        <h5 class="card-title">Kotak Pertolongan Pertama</h5>
+                        <p class="card-text">Bersiaplah dengan perlengkapan pertolongan pertama yang lengkap.</p>
+                        <button class="btn btn-success" onclick="addToCart('Kotak Pertolongan Pertama')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/portable_grill.png" class="card-img-top" alt="Portable Grill">
+                    <div class="card-body">
+                        <h5 class="card-title">Panggangan Portabel</h5>
+                        <p class="card-text">Panggang makanan favorit Anda saat berkemah.</p>
+                        <button class="btn btn-success" onclick="addToCart('Panggangan Portabel')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/insulated_cooler.png" class="card-img-top" alt="Insulated Cooler">
+                    <div class="card-body">
+                        <h5 class="card-title">Kotak Penjaga Suhu</h5>
+                        <p class="card-text">Jaga minuman Anda tetap dingin atau panas selama perjalanan Anda.</p>
+                        <button class="btn btn-success" onclick="addToCart('Kotak Penjaga Suhu')"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

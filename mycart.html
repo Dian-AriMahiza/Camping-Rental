@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCamp! - My Cart</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/my_cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Menambahkan Font Awesome -->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MyCamp!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">Beranda</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="mycart.html">Keranjang <span id="cart-badge" class="badge badge-pill badge-primary">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profil Akun</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-danger" onclick="logout()">Log Out</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="notification" style="display: none;" class="notification">
+        <span id="notification-message"></span>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Keranjangku</h2>
+        <ul class="list-group" id="cart-list"></ul>
+        <button id="place-order-btn" class="btn btn-primary btn-lg mt-3" style="width: 100%;" onclick="checkout()">Buat Pesanan</button>
+    </div>
+
+    <div id="success-container" style="display: none; text-align: center; margin-top: 50px;">
+        <!-- Menambahkan ikon centang besar di atas teks -->
+        <i class="fas fa-check-circle" style="font-size: 80px; color: green;"></i> <!-- Ikon centang -->
+        <h3 id="success-title" style="margin-top: 20px;">Barang berhasil disewa</h3> <!-- Menambahkan margin-top -->
+        <p id="success-message">Silahkan datang langsung ke toko untuk pembayaran secara offline.</p>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- Panggil Leaflet.js -->
+    <script src="js/mycart.js"></script> <!-- Panggil mycart.js setelah semuanya dimuat -->
+</body>
+</html>

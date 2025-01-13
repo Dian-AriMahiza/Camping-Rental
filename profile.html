@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCamp! - Account Profile</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <a class="navbar-brand" href="#">MyCamp!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mycart.html">Keranjang <span id="cart-badge" class="badge badge-pill badge-primary">0</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="profile.html">Profil Akun</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-danger" onclick="logout()">Log Out</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Container -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card shadow-sm p-4">
+                    <h2 class="text-center mb-4">Profil Akunmu</h2>
+                    
+                    <!-- Profile Display Section -->
+                    <div id="profile-display">
+                        <p><strong>Username</strong> : <span id="display-username"></span></p>
+                        <p><strong>Email</strong> : <span id="display-email"></span></p>
+                        <p><strong>Telepon</strong> : <span id="display-phone"></span></p>
+                        <p><strong>TL</strong> : <span id="display-dob"></span></p>
+                        <button id="edit-btn" class="btn btn-warning btn-block">Edit Profil</button>
+                    </div>
+                    
+                    <!-- Profile Edit Form -->
+                    <div id="profile-edit" style="display: none;">
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Masukkan nama kamu" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Masukkan email kamu" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor Telepon</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Masukkan nomor telepon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Tanggal Lahir</label>
+                                <input type="date" class="form-control" id="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" placeholder="Masukkan password baru">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-secondary" id="toggle-password">
+                                            <i class="fas fa-eye-slash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">*Password harus mengandung min. 8 karakter, 1 huruf besar, 1 angka, dan 1 simbol.</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+                            <button type="button" class="btn btn-secondary btn-block" id="cancel-btn">Cancel</button>
+                        </form>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
